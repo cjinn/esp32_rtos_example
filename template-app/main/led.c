@@ -1,8 +1,8 @@
 #include "led.h"
 #include <stdio.h>
 
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include <driver/gpio.h>
 
 /**
@@ -45,7 +45,7 @@ void setupLED(TaskHandle_t* pTaskHandle, LEDObject* pLEDObject) {
  * Turn on LED
  */
 void turnOnLED(LEDObject* pLEDObject) {
-  // printf("Turn on LED\r\n");
+  printf("Turn on LED\r\n");
 
   if (pLEDObject->ledOn) {
     gpio_set_level(pLEDObject->gpioPin, 1);
@@ -56,7 +56,7 @@ void turnOnLED(LEDObject* pLEDObject) {
  * Turn off LED
  */
 void turnOffLED(LEDObject* pLEDObject) {
-  // printf("Turn off LED\r\n");
+  printf("Turn off LED\r\n");
   gpio_set_level(pLEDObject->gpioPin, 0);
 }
 
